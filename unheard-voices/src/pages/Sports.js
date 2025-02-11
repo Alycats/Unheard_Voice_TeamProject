@@ -24,7 +24,7 @@ const sportsQuestions = [
     correctAnswer: "Option A",
   },
   {
-    question: "Question Here",
+    question: "Question Herie",
     options: ["Option A", "Option B", "Option C", "Option D"],
     correctAnswer: "Option A",
   },
