@@ -5,23 +5,23 @@ import Quiz from '../components/Quiz';
 const sportsQuestions = [
   {
     question: "What should you do before a training session?",
-    options: ["Option A", "Option B", "Option C", "Option D"],
-    correctAnswer: "Option A",
+    options: ["Meet the child before the first lesson showing the sports equiptment that will be used", "Play with the equiptment till everyone arrives", "Set everything up and wait", "Stretch"],
+    correctAnswer: "Meet the child before the first lesson showing the sports equiptment that will be used",
   },
   {
     question: "What will happen if you tell the child all the information of the lesson all at once?",
-    options: ["Option A", "Option B", "Option C", "Option D"],
-    correctAnswer: "Option A",
+    options: ["They will take the information and know what to do instantly", "They will understand everything first time", "They wont listen", "They will be overwhelmed"],
+    correctAnswer: "They will be overwhelmed",
   },
   {
     question: "When teaching the child, what teaching approach should you go by?",
-    options: ["Option A", "Option B", "Option C", "Option D"],
-    correctAnswer: "Option A",
+    options: ["Demonstrate what's about to happen and what you need to be done and show it in small segments", "Speak and they will follow based on what you said", "Show and they will just copy what you done", "Just put the stuff out and expect them to make a guess"],
+    correctAnswer: "Demonstrate what's about to happen and what you need to be done and show it in small segments",
   },
   {
     question: "Which one of these sports DON'T require a high level of communication?",
-    options: ["Option A", "Option B", "Option C", "Option D"],
-    correctAnswer: "Option A",
+    options: ["Football", "Basketball", "Ice Hockey", "Tennis(Singles)"],
+    correctAnswer: "Tennis(Singles)",
   },
   {
     question: "Which swimming stroke uses both arms moving together on the same side?",
