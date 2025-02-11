@@ -62,8 +62,8 @@ function Language() {
 
   return (
     <div>
-      <h1>Language Development and Autism</h1>
-      <p>An interactive language development quiz that helps users check if their child is meeting key milestones.</p>
+      <h1>Understanding Language Development in Autism</h1>
+      <p>A fun and interactive quiz to help you see if your child is reaching important language milestones! 😊</p>
 
       {languageQuestions.map((question, index) => (
         <div key={index}>
