@@ -5,7 +5,7 @@ const languageQuestions = [
   {
     question: "At what age should a child typically start saying simple words like mama or dada with meaning",
     options: ["6 months", "12 months", "18 months", "24 months"],
-    correctAnswer: "Option B",
+    correctAnswer: "Otion B",
   },
   {
     question: "Question Here",
