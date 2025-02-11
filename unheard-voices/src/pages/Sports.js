@@ -4,22 +4,22 @@ import Quiz from '../components/Quiz';
 // Default Sports Quiz Questions
 const sportsQuestions = [
   {
-    question: "Question Here",
+    question: "What should you do before a training session?",
     options: ["Option A", "Option B", "Option C", "Option D"],
     correctAnswer: "Option A",
   },
   {
-    question: "Question Here",
+    question: "What will happen if you tell the child all the informationi at once?",
     options: ["Option A", "Option B", "Option C", "Option D"],
     correctAnswer: "Option A",
   },
   {
-    question: "Question Here",
+    question: "When teaching the childwhat teaching approach should you go by?",
     options: ["Option A", "Option B", "Option C", "Option D"],
     correctAnswer: "Option A",
   },
   {
-    question: "Question Here",
+    question: "Which one of these sports DON'T require a high level of communication?",
     options: ["Option A", "Option B", "Option C", "Option D"],
     correctAnswer: "Option A",
   },
