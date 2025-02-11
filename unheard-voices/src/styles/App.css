@@ -1,0 +1,23 @@
+@import url('styles.css'); /* Import global styles */
+
+.App {
+    font-family: var(--font-family);
+    text-align: center;
+    width: 100vw;
+}
+
+.page-container {
+    padding: var(--page-padding);
+}
+
+h1 {
+    font-size: var(--font-xxlarge);
+    margin-bottom: var(--spacing-medium);
+    color: var(--text-color);
+}
+
+p {
+    font-size: var(--font-medium);
+    margin-bottom: var(--spacing-medium);
+    color: var(--text-color);
+}
