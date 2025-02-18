@@ -1,5 +1,6 @@
 import React from 'react';
 import Quiz from '../components/Quiz';
+import VideoClip from '../components/Youtube-Video';
 
 // Default Sports Quiz Questions
 const sportsQuestions = [
@@ -76,6 +77,8 @@ function Sports() {
       <h9>     </h9>
       <p9>Remember to make it fun for the child as they will need to be motivated to take part or find interest in it.</p9>
 
+      <VideoClip/>
+      
       {/* Quiz component with the sportsQuestions */}
       <Quiz questions={sportsQuestions} />
     </div>
@@ -83,3 +86,4 @@ function Sports() {
 }
 
 export default Sports;
+
