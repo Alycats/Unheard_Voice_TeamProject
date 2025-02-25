@@ -1,6 +1,7 @@
 import React from 'react';
 import Quiz from '../components/Quiz';
 import VideoClip from '../components/Youtube-Video';
+import Lesson from '../components/Lesson-Row';
 
 // Default Sports Quiz Questions
 const sportsQuestions = [
@@ -62,6 +63,7 @@ function Sports() {
       <h1>Sports and Autism</h1>
       <p>Explore how sports can help children with autism develop social skills, improve motor coordination, and more.</p>
       <h2>Teaching sports with children with Autism</h2>
+      <Lesson/>
       <p>Before you start to coach a child that has autism, not every child is the same and what may work for one child doesn't mean it will work for the other child. Giving a child a series of steps to take in all at once will be difficult for them and quite overwhelming.</p>
       <h3>     </h3>
       <p3>To teach a child with autism sports to make things easier for the child to settle in meeting the child before the first lesson and showing the child the sports equipment that's about to be used ahead of time will also help. That way the child isn't hit with all the information all at once and shown the equipment which they could be unfamiliar with and told to repeat the action.  </p3>
