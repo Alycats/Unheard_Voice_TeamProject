@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import AnimalFlashcardGame from './AnimalFlashcardGame'; // Import the AnimalFlashcardGame component
 
 const languageQuestions = [
   {
@@ -65,6 +66,7 @@ function Language() {
       <h1>Understanding Language Development in Autism</h1>
       <p>A fun and interactive quiz to help you see if your child is reaching important language milestones! 😊</p>
 
+      {/* Quiz Section */}
       {languageQuestions.map((question, index) => (
         <div key={index}>
           <p>{question.question}</p>
@@ -86,6 +88,7 @@ function Language() {
 
       <button onClick={handleSubmit} disabled={showResults}>Submit Quiz</button>
 
+      {/* Quiz Results Section */}
       {showResults && (
         <div>
           <h3>Your Score: {score} / {languageQuestions.length}</h3>
@@ -106,6 +109,11 @@ function Language() {
           ))}
         </div>
       )}
+
+      {/* Flashcard Game Section */}
+      <h2 style={{ marginTop: '40px' }}>Animal Flashcard Game</h2>
+      <p>Flip the cards to learn about animals and hear their sounds! 🐯🦁🐶🐱🐦</p>
+      <AnimalFlashcardGame />
     </div>
   );
 }

@@ -1,0 +1,20 @@
+{
+  "name": "unheard_voice_teamproject",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Alycats/Unheard_Voice_TeamProject.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Alycats/Unheard_Voice_TeamProject/issues"
+  },
+  "homepage": "https://github.com/Alycats/Unheard_Voice_TeamProject#readme"
+}
