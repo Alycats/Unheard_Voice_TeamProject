@@ -111,7 +111,7 @@ function Language() {
       )}
 
       {/* Flashcard Game Section */}
-      <h2 style={{ marginTop: '40px' }}>Animal Flashcard Game</h2>
+      <h2 style={{ marginTop: '40px' }}>Interactive Game</h2>
       <p>Flip the cards to learn about animals and hear their sounds! 🐯🦁🐶🐱🐦</p>
       <AnimalFlashcardGame />
     </div>
