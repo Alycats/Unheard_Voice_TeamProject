@@ -76,9 +76,9 @@ function Sports() {
       <p8>Some sports don't require a high level of communication or even team play so certain sports will be more effective and similar to teach to children with autism which will also allow them to have fun. These sports are swimming, track and field, bowling, Horseback Riding, Hiking and Fishing, Biking and lastly martial arts.</p8>
       <h9>     </h9>
       <p9>Remember to make it fun for the child as they will need to be motivated to take part or find interest in it.</p9>
-
-      <VideoClip/>
       
+      <VideoClip/>
+
       {/* Quiz component with the sportsQuestions */}
       <Quiz questions={sportsQuestions} />
     </div>
