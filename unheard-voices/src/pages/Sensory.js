@@ -56,8 +56,8 @@ const sensoryQuestions = [
 
 function Sensory() {
   return (
-    <div>
-      <h1>Sensory Challenges and Autism</h1>
+    <div class="sensorymain">
+      <h1 class="sensoryheader">Sensory Challenges and Autism</h1>
       <p>Learn about the sensory processing challenges that many individuals with autism face and how to address them.</p>
 
       <p>Sensory Difficulties in people with autism fall into two categories: Hypersensitivity and Hyposensitivity</p>
@@ -65,18 +65,24 @@ function Sensory() {
       <br></br>
 
       <h3><u>Hypersensitivity</u></h3>
-
+      <div class="sensory-card-wrapper">
+        <div class="sensory-card-body">
+          <div class="sensory-card-front">
       <p>People suffering from Hypersensitivity struggle with an excess of sensory input. People suffering with this largely tend
         to employ sensory avoidance to sensory data that most people can easily tune out. This includes sensory input such as:
       </p>
-
-      <ul>
+      </div>
+      <div class="sensory-card-back">
+      <ul class="sensoryBP">
         <li>Sights such as bright lights</li>
         <li>Loud or unpredictable sounds</li>
         <li>Potent smells</li>
         <li>Certain textures</li>
         <li>Strong tastes</li>
       </ul>
+      </div>
+      </div>
+      </div>
 
       <br></br>
 
@@ -106,7 +112,7 @@ function Sensory() {
         that can be made, such as:
       </p>
 
-      <ul>
+      <ul class="sensoryBP">
         <li>Sunglasses or other eye covers to shut out excessive light</li>
         <li>Ear plugs/defenders or headphones when in loud environments</li>
         <li>Avoiding products with potent smells or strong tastes, such as spices</li>
@@ -143,7 +149,7 @@ function Sensory() {
       <p>When a hyposensitive person is suffering from a sensory issue, it can manifest itself very differently than that of a 
         hypersensitive person. This causes the person to react or behave in certain ways such as:</p>
 
-      <ul>
+      <ul class="sensoryBP">
         <li>Increased movement, such as spinning, numping around or hand flapping</li>
         <li>Increased levels of noise, such as by making repetitive loud noises</li>
         <li>Difficulties recognising internal sensations such as hunger or pain</li>
@@ -156,7 +162,7 @@ function Sensory() {
 
       <p>When attempting to help a person suffering from hyposensitivity, there are a number of accommodations that can be made:</p>
 
-      <ul>
+      <ul class="sensoryBP">
         <li>Fidget toys, chew toys or other sensory tools</li>
         <li>Arranging furniture to create safe, open rooms</li>
         <li>Foods with strong flavours and mixed textures</li>
