@@ -56,8 +56,8 @@ const sensoryQuestions = [
 
 function Sensory() {
   return (
-    <div class="sensorymain">
-      <h1 class="sensoryheader">Sensory Challenges and Autism</h1>
+    <div>
+      <h1 style="background-color: red;">Sensory Challenges and Autism</h1>
       <p>Learn about the sensory processing challenges that many individuals with autism face and how to address them.</p>
 
       <p>Sensory Difficulties in people with autism fall into two categories: Hypersensitivity and Hyposensitivity</p>
