@@ -2,37 +2,36 @@ import React, { useState } from 'react';
 
 // Animal data with image URLs and sound URLs
 const animalData = [
-    {
-      name: 'Tiger',
-      image: 'https://upload.wikimedia.org/wikipedia/commons/5/56/Tiger.50.jpg',
-      sound: '', // Tiger Roar
-    },
-    {
-      name: 'Lion',
-      image: 'https://upload.wikimedia.org/wikipedia/commons/7/73/Lion_waiting_in_Namibia.jpg',
-      sound: ''  // Lion Roar
-    },
-    {
-      name: 'Dog',
-      image: 'https://upload.wikimedia.org/wikipedia/commons/d/d9/Collage_of_Nine_Dogs.jpg',
-      sound: './src/sounds/dog.wav', // Dog Barking
-    },
-    {
-      name: 'Cat',
-      image: 'https://upload.wikimedia.org/wikipedia/commons/4/4d/Cat_November_2010-1a.jpg',
-      sound: '', // Cat Meow
-    },
-    {
-      name: 'Bird',
-      image: 'https://upload.wikimedia.org/wikipedia/commons/thumb/1/1d/Bird_Diversity_2013_Cropped.jpg/640px-Bird_Diversity_2013_Cropped.jpg',
-      sound: '', // Bird Chirping
-    },
-    {
-        name: 'Zebra',
-        image: 'https://upload.wikimedia.org/wikipedia/commons/thumb/c/c3/Equus_zebra_hartmannae_-_Etosha_2015.jpg/640px-Equus_zebra_hartmannae_-_Etosha_2015.jpg',
-        sound: '', // Bird Chirping
-      },
-  // Add more animals here
+  {
+    name: 'Tiger',
+    image: 'https://upload.wikimedia.org/wikipedia/commons/5/56/Tiger.50.jpg',
+    sound: '/sounds/tiger.mp3', // Tiger Roar
+  },
+  {
+    name: 'Lion',
+    image: 'https://upload.wikimedia.org/wikipedia/commons/7/73/Lion_waiting_in_Namibia.jpg',
+    sound: '/sounds/lion.mp3', // Lion Roar
+  },
+  {
+    name: 'Dog',
+    image: 'https://upload.wikimedia.org/wikipedia/commons/d/d9/Collage_of_Nine_Dogs.jpg',
+    sound: '/sounds/dog.mp3', // Dog Barking
+  },
+  {
+    name: 'Cat',
+    image: 'https://upload.wikimedia.org/wikipedia/commons/4/4d/Cat_November_2010-1a.jpg',
+    sound: '/sounds/cat.mp3', // Cat Meow
+  },
+  {
+    name: 'Bird',
+    image: 'https://upload.wikimedia.org/wikipedia/commons/thumb/1/1d/Bird_Diversity_2013_Cropped.jpg/640px-Bird_Diversity_2013_Cropped.jpg',
+    sound: '/sounds/bird.mp3', // Bird Chirping
+  },
+  {
+    name: 'Zebra',
+    image: 'https://upload.wikimedia.org/wikipedia/commons/thumb/c/c3/Equus_zebra_hartmannae_-_Etosha_2015.jpg/640px-Equus_zebra_hartmannae_-_Etosha_2015.jpg',
+    sound: '/sounds/zebra.mp3', // Zebra Sound
+  },
 ];
 
 function AnimalFlashcardGame() {
@@ -51,9 +50,15 @@ function AnimalFlashcardGame() {
 
   const handleFlip = () => {
     setShowName(!showName);
+
     // Play the animal sound
-    const audio = new Audio(animalData[currentIndex].sound);
-    audio.play();
+    const soundFile = animalData[currentIndex].sound;
+    if (soundFile) {
+      const audio = new Audio(soundFile);
+      audio.play().catch((error) => {
+        console.error('Failed to play sound:', error);
+      });
+    }
   };
 
   return (

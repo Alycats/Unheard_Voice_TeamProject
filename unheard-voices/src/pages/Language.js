@@ -66,6 +66,37 @@ function Language() {
       <h1>Understanding Language Development in Autism</h1>
       <p>A fun and interactive quiz to help you see if your child is reaching important language milestones! 😊</p>
 
+      {/* Dropdown Sections */}
+      <div style={{ marginBottom: '20px' }}>
+        <details style={{ marginBottom: '10px', border: '1px solid #ccc', borderRadius: '5px', padding: '10px' }}>
+          <summary style={{ fontWeight: 'bold', cursor: 'pointer' }}>What is Language Development?</summary>
+          <p>
+            Language development refers to the process by which children learn to understand and use language. For autistic children, this process may occur differently or at a different pace. Early intervention and support can help improve communication skills.
+          </p>
+        </details>
+
+        <details style={{ marginBottom: '10px', border: '1px solid #ccc', borderRadius: '5px', padding: '10px' }}>
+          <summary style={{ fontWeight: 'bold', cursor: 'pointer' }}>Common Language Challenges in Autism</summary>
+          <p>
+            Autistic children may experience challenges such as delayed speech, difficulty understanding social cues, repetitive language, or trouble with conversational skills. Speech therapy and tailored educational programs can help address these challenges.
+          </p>
+        </details>
+
+        <details style={{ marginBottom: '10px', border: '1px solid #ccc', borderRadius: '5px', padding: '10px' }}>
+          <summary style={{ fontWeight: 'bold', cursor: 'pointer' }}>How to Support Language Development</summary>
+          <p>
+            To support language development, engage your child in interactive activities, use visual aids, encourage imitation, and provide a language-rich environment. Working with speech therapists and educators can also be beneficial.
+          </p>
+        </details>
+
+        <details style={{ marginBottom: '10px', border: '1px solid #ccc', borderRadius: '5px', padding: '10px' }}>
+          <summary style={{ fontWeight: 'bold', cursor: 'pointer' }}>Signs of Language Delays</summary>
+          <p>
+            Signs of language delays include limited vocabulary, difficulty forming sentences, lack of response to their name, and trouble following simple instructions. If you notice these signs, consult a pediatrician or speech therapist for evaluation.
+          </p>
+        </details>
+      </div>
+
       {/* Quiz Section */}
       {languageQuestions.map((question, index) => (
         <div key={index}>
@@ -111,7 +142,7 @@ function Language() {
       )}
 
       {/* Flashcard Game Section */}
-      <h2 style={{ marginTop: '40px' }}>Interactive Game</h2>
+      <h2 style={{ marginTop: '40px' }}>Animal Flashcard Game</h2>
       <p>Flip the cards to learn about animals and hear their sounds! 🐯🦁🐶🐱🐦</p>
       <AnimalFlashcardGame />
     </div>
