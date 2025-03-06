@@ -1,101 +1,139 @@
-@import url('styles.css'); /* Import global styles */
+/* Global Styles */
+@import url('https://fonts.googleapis.com/css2?family=Quicksand:wght@400;600&display=swap');
+
+body {
+  font-family: 'Quicksand', sans-serif;
+  margin: 0;
+  padding: 0;
+  background: linear-gradient(135deg, #FBC02D, #1976D2); /* Yellow and Blue Gradient */
+}
 
 /* MAIN NAVBAR (FULL WIDTH) */
 .main-navbar {
-    width: 100%;
-    background-color: var(--primary-color);
-    padding: var(--padding-medium);
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    box-sizing: border-box;
+  width: 100%;
+  background-color: #1976D2; /* Blue */
+  padding: 20px 40px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  box-sizing: border-box;
+  box-shadow: 0px 5px 15px rgba(0, 0, 0, 0.3); /* Soft shadow */
+  border-bottom: 3px solid #FBC02D; /* Yellow bottom border */
+  transition: transform 0.3s ease-in-out;
+}
+
+.main-navbar:hover {
+  transform: translateY(-5px); /* Slight hover effect */
 }
 
 /* HEADER WRAPPER (LOGO & TITLE) */
 .header-wrapper {
-    display: flex;
-    align-items: center;
-    gap: 12px;
+  display: flex;
+  align-items: center;
+  gap: 15px;
 }
 
 .logo img {
-    width: 80px; /* Bigger logo */
-    height: auto;
+  width: 80px; /* Adjust logo size */
+  height: auto;
+  transition: transform 0.2s ease-in-out;
+}
+
+.logo img:hover {
+  transform: scale(1.1); /* Logo hover effect */
 }
 
 .main-header h1 {
-    font-size: var(--font-xlarge);
-    color: var(--text-light);
-    margin: 0;
-    padding: 10px;
+  font-size: 2rem;
+  color: #fff; /* Light text for contrast */
+  margin: 0;
+  padding: 10px;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.2); /* Soft shadow for depth */
 }
 
 /* NAVBAR LINKS */
 .main-navbar ul {
-    list-style: none;
-    background-color: var(--secondary-color);
-    margin: 0;
-    padding: 0;
-    display: flex;
-    gap: var(--spacing-medium);
-    flex-wrap: nowrap; /* Ensure links stay horizontal */
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  gap: 30px;
+  flex-wrap: nowrap; /* Ensure links stay horizontal */
 }
 
 .main-navbar li {
-    margin: 0;
+  margin: 0;
 }
 
 .main-navbar a {
-    color: var(--text-light);
-    text-decoration: none;
-    font-size: var(--font-large);
+  color: #fff;
+  text-decoration: none;
+  font-size: 1.2rem;
+  transition: color 0.3s ease-in-out;
+}
+
+.main-navbar a:hover {
+  color: #FBC02D; /* Change color to yellow on hover */
 }
 
 /* SUB NAVBAR (FULL WIDTH) */
 .sub-navbar {
-    width: 100%;
-    background-color: var(--accent-color);
-    padding: var(--padding-medium);
-    display: flex;
-    justify-content: center;
-    box-sizing: border-box;
+  width: 100%;
+  background-color: #FBC02D; /* Yellow */
+  padding: 15px;
+  display: flex;
+  justify-content: center;
+  box-sizing: border-box;
 }
 
 .sub-navbar ul {
-    list-style: none;
-    margin: 0;
-    padding: 0;
-    display: flex;
-    gap: var(--spacing-medium);
-    flex-wrap: nowrap; /* Ensure sub-navbar links stay horizontal */
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  gap: 20px;
+  flex-wrap: nowrap;
+}
+
+/* Sub Navbar Links */
+.sub-navbar a {
+  color: #1976D2; /* Blue for sub-navbar links */
+  text-decoration: none;
+  font-size: 1rem;
+  font-weight: 600;
+  transition: color 0.3s ease-in-out;
+}
+
+.sub-navbar a:hover {
+  color: #333; /* Dark color on hover */
 }
 
 /* RESPONSIVE DESIGN (FIXING MOBILE LAYOUT) */
 @media (max-width: 768px) {
-    .main-navbar {
-        flex-direction: column;
-        align-items: center;
-        padding: var(--padding-small);
-    }
+  .main-navbar {
+    flex-direction: column;
+    align-items: center;
+    padding: 15px 20px;
+  }
 
-    .header-wrapper {
-        flex-direction: column;
-        align-items: center;
-        text-align: center;
-        gap: 8px;
-    }
+  .header-wrapper {
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    gap: 10px;
+  }
 
-    .logo img {
-        width: 100px; /* Bigger logo on mobile */
-    }
+  .logo img {
+    width: 100px; /* Bigger logo on mobile */
+  }
 
-    .main-header h1 {
-        font-size: var(--font-large);
-    }
+  .main-header h1 {
+    font-size: 1.5rem; /* Smaller font size on mobile */
+  }
 
-    .main-navbar ul, .sub-navbar ul {
-        flex-direction: row; /* Keep navbar links horizontal */
-        justify-content: center;
-        gap: var(--spacing-small);
-    }
+  .main-navbar ul, .sub-navbar ul {
+    flex-direction: column; /* Stack navbar links on mobile */
+    justify-content: center;
+    gap: 15px;
+  }
 }

@@ -1,0 +1,78 @@
+/* Import Google Font */
+@import url('https://fonts.googleapis.com/css2?family=Quicksand:wght@400;600&display=swap');
+
+/* Global Styles */
+body {
+  font-family: 'Quicksand', sans-serif;
+  background: linear-gradient(135deg, #FBC02D, #1976D2); /* Yellow and Blue */
+  color: #333;
+  text-align: center;
+  margin: 0;
+  padding: 0;
+}
+
+/* Container */
+.about-container {
+  padding: 50px 20px;
+  max-width: 1000px;
+  margin: 50px auto;
+  border-radius: 20px;
+  background: rgba(255, 255, 255, 0.7); /* White with transparency */
+  box-shadow: 0px 8px 20px rgba(0, 0, 0, 0.2);
+  backdrop-filter: blur(10px);
+  transition: transform 0.3s ease-in-out;
+}
+
+.about-container:hover {
+  transform: translateY(-5px);
+}
+
+/* Title */
+.about-title {
+  font-size: 3rem;
+  font-weight: 600;
+  color: #1976D2; /* Blue */
+  margin-bottom: 10px;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.4); /* Soft shadow for depth */
+}
+
+/* Description */
+.about-description {
+  font-size: 1.4rem;
+  color: #333; /* Black for text clarity */
+  font-weight: 400;
+  margin-bottom: 30px;
+}
+
+/* Content Section */
+.about-content {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+}
+
+/* About Text */
+.about-text {
+  font-size: 1.2rem;
+  color: #333;
+  font-weight: 400;
+  margin-top: 20px;
+  line-height: 1.6;
+  padding: 0 20px;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .about-title {
+    font-size: 2.5rem;
+  }
+
+  .about-description {
+    font-size: 1.2rem;
+  }
+
+  .about-text {
+    font-size: 1rem;
+  }
+}
