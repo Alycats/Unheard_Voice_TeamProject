@@ -1,5 +1,6 @@
 import React from 'react';
 import Quiz from '../components/Quiz';
+import '../styles/Sensory.css';
 
 const sensoryQuestions = [
   {
@@ -56,7 +57,7 @@ const sensoryQuestions = [
 
 function Sensory() {
   return (
-    <div>
+    <div className="body">
       <h1 style={{backgroundColor: 'red'}}>Sensory Challenges and Autism</h1>
       <p>Learn about the sensory processing challenges that many individuals with autism face and how to address them.</p>
 
@@ -64,11 +65,11 @@ function Sensory() {
 
       <br></br>
 
-      <h3><u>Hypersensitivity</u></h3>
+      <h2><u>Hypersensitivity</u></h2>
       <div class="sensory-card-wrapper">
         <div class="sensory-card-body">
           <div class="sensory-card-front">
-      <p>People suffering from Hypersensitivity struggle with an excess of sensory input. People suffering with this largely tend
+      <p style={{color: 'blue'}}>People suffering from Hypersensitivity struggle with an excess of sensory input. People suffering with this largely tend
         to employ sensory avoidance to sensory data that most people can easily tune out. This includes sensory input such as:
       </p>
       </div>
@@ -107,11 +108,15 @@ function Sensory() {
       </p>
 
       <br></br>
-
-      <p>When attempting to help someone experiencing a sensory issue related to hypersensitivity, there are a number of accommodations
+      <div class="sensory-card-wrapper">
+        <div class="sensory-card-body">
+          <div class="sensory-card-front">
+      <p style={{color: 'blue'}}>When attempting to help someone experiencing a sensory issue related to hypersensitivity, there are a number of accommodations
         that can be made, such as:
       </p>
+      </div>
 
+      <div class="sensory-card-back">
       <ul class="sensoryBP">
         <li>Sunglasses or other eye covers to shut out excessive light</li>
         <li>Ear plugs/defenders or headphones when in loud environments</li>
@@ -119,6 +124,9 @@ function Sensory() {
         <li>Soft, comfortable clothing</li>
         <li>Designing schedules which avoid large crowds whenever possible</li>
       </ul>
+      </div>
+      </div>
+      </div>
 
       <br></br>
       <br></br>
@@ -146,9 +154,14 @@ function Sensory() {
       
       <br></br>
 
-      <p>When a hyposensitive person is suffering from a sensory issue, it can manifest itself very differently than that of a 
+      <div class="sensory-card-wrapper">
+        <div class="sensory-card-body">
+          <div class="sensory-card-front">
+      <p style={{color: 'blue'}}>When a hyposensitive person is suffering from a sensory issue, it can manifest itself very differently than that of a 
         hypersensitive person. This causes the person to react or behave in certain ways such as:</p>
+        </div>
 
+        <div class="sensory-card-back">
       <ul class="sensoryBP">
         <li>Increased movement, such as spinning, numping around or hand flapping</li>
         <li>Increased levels of noise, such as by making repetitive loud noises</li>
@@ -157,18 +170,29 @@ function Sensory() {
         <li>Frequent chewing on non-food items</li>
         <li>Frequent touching of others</li>
       </ul>
+      </div>
+      </div>
+      </div>
 
       <br></br>
 
-      <p>When attempting to help a person suffering from hyposensitivity, there are a number of accommodations that can be made:</p>
+      <div class="sensory-card-wrapper">
+        <div class="sensory-card-body">
+          <div class="sensory-card-front">
+      <p style={{color: 'blue'}}>When attempting to help a person suffering from hyposensitivity, there are a number of accommodations that can be made:</p>
+      </div>
 
-      <ul class="sensoryBP">
+      <div class="sensory-card-back">
+        <ul class="sensoryBP">
         <li>Fidget toys, chew toys or other sensory tools</li>
         <li>Arranging furniture to create safe, open rooms</li>
         <li>Foods with strong flavours and mixed textures</li>
         <li>Taking frequent movement breaks throughout the day</li>
         <li>Weighted blankets or clothing that provides a deep pressure</li>
       </ul>
+      </div>
+      </div>
+      </div>
 
       <br></br>
       <br></br>
