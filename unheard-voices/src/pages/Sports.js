@@ -3,6 +3,8 @@ import Quiz from '../components/Quiz';
 import VideoClip from '../components/Youtube-Video';
 import Lesson from '../components/Lesson-Row';
 
+
+
 // Default Sports Quiz Questions
 const sportsQuestions = [
   {
@@ -67,8 +69,9 @@ function Sports() {
       <VideoClip/>
 
       {/* Quiz component with the sportsQuestions */}
-      <p>Need 40% to use Reward below Quiz</p>
+      
       <Quiz questions={sportsQuestions} />
+      <p>Need 40% to use Reward below Quiz</p>
       <p>Reward down below</p>
       <p>Down below is a following red dot. It follows the cursor around</p>
       <p></p>
