@@ -67,7 +67,11 @@ function Sports() {
       <VideoClip/>
 
       {/* Quiz component with the sportsQuestions */}
+      <p>Need 40% to use Reward below Quiz</p>
       <Quiz questions={sportsQuestions} />
+      <p>Reward down below</p>
+      <p>Down below is a following red dot. It follows the cursor around</p>
+      <p></p>
     </div>
   );
 }
