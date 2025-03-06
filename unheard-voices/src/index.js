@@ -15,10 +15,10 @@ import { createBrowserRouter, RouterProvider } from 'react-router-dom';
 // Define your routes
 const router = createBrowserRouter([
   {
-    path: "/",  // The root path
-    element: <App />, // App component with Navbar
+    path: "/", 
+    element: <App />, // ✅ App handles Login internally
     children: [
-      { path: "home", element: <Home /> }, 
+      { path: "home", element: <Home /> },
       { path: "about", element: <About /> },
       { path: "contact", element: <Contact /> },
       { path: "sports", element: <Sports /> },
@@ -29,7 +29,7 @@ const router = createBrowserRouter([
   },
 ]);
 
-const root = ReactDOM.createRoot(document.getElementById('root'));
+const root = ReactDOM.createRoot(document.getElementById("root"));
 root.render(
   <React.StrictMode>
     <RouterProvider router={router} />

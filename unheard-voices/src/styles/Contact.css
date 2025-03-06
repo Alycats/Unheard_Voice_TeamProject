@@ -1,0 +1,105 @@
+/* Import Google Font */
+@import url('https://fonts.googleapis.com/css2?family=Quicksand:wght@400;600&display=swap');
+
+/* Global Styles */
+body {
+  font-family: 'Quicksand', sans-serif;
+  background: linear-gradient(135deg, #FBC02D, #1976D2); /* Yellow and Blue */
+  color: #333;
+  text-align: center;
+  margin: 0;
+  padding: 0;
+}
+
+/* Container */
+.contact-container {
+  padding: 50px 20px;
+  max-width: 1000px;
+  margin: 50px auto;
+  border-radius: 20px;
+  background: rgba(255, 255, 255, 0.7); /* White with transparency */
+  box-shadow: 0px 8px 20px rgba(0, 0, 0, 0.2);
+  backdrop-filter: blur(10px);
+  transition: transform 0.3s ease-in-out;
+}
+
+.contact-container:hover {
+  transform: translateY(-5px);
+}
+
+/* Title */
+.contact-title {
+  font-size: 3rem;
+  font-weight: 600;
+  color: #1976D2; /* Blue */
+  margin-bottom: 10px;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.4); /* Soft shadow for depth */
+}
+
+/* Description */
+.contact-description {
+  font-size: 1.4rem;
+  color: #333;
+  font-weight: 400;
+  margin-bottom: 30px;
+}
+
+/* Contact Cards */
+.contact-list {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 30px;
+  justify-content: center;
+}
+
+.contact-card {
+  background-color: #FBC02D; /* Yellow */
+  color: #333;
+  border-radius: 15px;
+  padding: 20px;
+  box-shadow: 0px 4px 15px rgba(0, 0, 0, 0.2);
+  width: 250px;
+  text-align: center;
+  transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+}
+
+.contact-card:hover {
+  transform: scale(1.05);
+  box-shadow: 0px 6px 20px rgba(0, 0, 0, 0.3);
+}
+
+.contact-name {
+  font-size: 1.5rem;
+  font-weight: 600;
+  color: #1976D2; /* Blue */
+  margin-bottom: 5px;
+}
+
+.contact-role {
+  font-size: 1.1rem;
+  font-weight: 400;
+  color: #333;
+  margin-bottom: 10px;
+}
+
+.contact-email,
+.contact-phone {
+  font-size: 1rem;
+  color: #333;
+  margin-bottom: 5px;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .contact-title {
+    font-size: 2.5rem;
+  }
+
+  .contact-description {
+    font-size: 1.2rem;
+  }
+
+  .contact-card {
+    width: 200px;
+  }
+}
