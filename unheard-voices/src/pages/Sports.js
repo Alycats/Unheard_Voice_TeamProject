@@ -57,18 +57,42 @@ const sportsQuestions = [
   },
 ];
 
+// Default Sports Lesson Content
+const sportsLessons = [
+  {
+    title: "Lesson 1",
+    content: "Before you start to coach a child that has autism, not every child is the same, and what may work for one child doesn't mean it will work for the other child. Giving a child a series of steps to take in all at once will be difficult for them and quite overwhelming."
+  },
+  {
+    title: "Lesson 2",
+    content: "To teach a child with autism sports to make things easier for the child to settle in, meet the child before the first lesson and show them the sports equipment that will be used ahead of time. This way, the child isn’t overwhelmed with all the information at once."
+  },
+  {
+    title: "Lesson 3",
+    content: "For each practice, make sure to have a repeated routine every time so that the child gets used to the order. Avoid sarcasm, metaphors, and humor as they may confuse children with autism."
+  },
+  {
+    title: "Lesson 4",
+    content: "Some sports don't require a high level of communication or even team play, so certain sports like swimming, track and field, bowling, and others will be more effective and enjoyable for children with autism."
+  },
+];
+
 function Sports() {
   return (
     <div>
       <h1>Sports and Autism</h1>
       <p>Explore how sports can help children with autism develop social skills, improve motor coordination, and more.</p>
       <h2>Teaching sports with children with Autism</h2>
-      <Lesson/>
-      <VideoClip/>
-
+      
+      {/* Pass the sportsLessons data as a prop to the Lesson component */}
+      <Lesson lessons={sportsLessons} />
+      
+      <VideoClip />
+      
       {/* Quiz component with the sportsQuestions */}
       <p>Need 40% to use Reward below Quiz</p>
       <Quiz questions={sportsQuestions} />
+      
       <p>Reward down below</p>
       <p>Down below is a following red dot. It follows the cursor around</p>
       <p></p>
