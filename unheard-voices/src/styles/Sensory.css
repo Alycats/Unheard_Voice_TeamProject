@@ -100,12 +100,12 @@
   }
 
   .sensory-card-front{
-    background-color: yellow;
+    background-color: orange;
     color: blue;
   }
   .sensory-card-back{
     background-color: blue;
-    color: yellow;
+    color: orange;
     transform: rotateX(180deg);
   }
 
@@ -113,4 +113,19 @@
     list-style-position: inside;
   }*/
 
+  .body{
+    margin-bottom: 20px;
+  }
+
+  .sensory-details{
+    margin-bottom: 10px;
+    border-color: 1px solid black;
+    border-radius: 5px; 
+    padding: 10px;
+  }
+
+  .sensory-summary{
+    font-weight: bold;
+    cursor: pointer;
+  }
   

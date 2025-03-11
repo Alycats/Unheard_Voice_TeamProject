@@ -57,20 +57,36 @@ const sensoryQuestions = [
 
 function Sensory() {
   return (
-    <div className="body">
+    <div class="body">
       <h1 style={{backgroundColor: 'red'}}>Sensory Challenges and Autism</h1>
-      <p>Learn about the sensory processing challenges that many individuals with autism face and how to address them.</p>
-
-      <p>Sensory Difficulties in people with autism fall into two categories: Hypersensitivity and Hyposensitivity</p>
-
+      <h3>Learn about the sensory processing challenges that many individuals with autism face and how to address them.</h3>
       <br></br>
+      <details class="sensory-details" style={{border: '1px solid #ccc'}}>
+          <summary class="sensory-summary">Lesson 1 - Hypersensitivity and Hyposensitivity</summary>
+          <br></br>
+          <p>Sensory Difficulties in people with autism fall into two categories: Hypersensitivity and Hyposensitivity</p>
 
-      <h2><u>Hypersensitivity</u></h2>
-      <div class="sensory-card-wrapper">
+          <p>People suffering from Hypersensitivity struggle with experiencing too much sensory input. People suffering with this tend
+          to struggle with overexposure to sensations that most people can easily tune out. As a result, they make use of a technique called
+          sensory avoidance. This involves taking measures to reduce sensory input through actions such as covering eyes/ears/nose or
+          limiting movement</p>
+
+          <p>On the other end of the spectrum, people suffering from Hyposensitivity struggle with a lack of sensory input. People suffering
+            with this tend to try to increase their sensory input however they can by using a technique called sensory seeking. This
+            involves taking measures to increase sensory input through actions such as making loud, repetitive noises, jumping or spinning
+            around or interacting with the environment.
+          </p>
+          <br></br>
+      </details>
+      <details class="sensory-details" style={{border: '1px solid #ccc'}}>
+        <summary class="sensory-summary">Lesson 2 - Challenges faced by those with Hypersensitivity</summary>
+        <br></br>
+            <p>People suffering from Hypersensitivity struggle with an excess of sensory input. People suffering with this largely tend
+            to employ sensory avoidance to sensory data that most people can easily tune out. This includes sensory input such as:</p>
+        <div class="sensory-card-wrapper">
         <div class="sensory-card-body">
-          <div class="sensory-card-front">
-      <p style={{color: 'blue'}}>People suffering from Hypersensitivity struggle with an excess of sensory input. People suffering with this largely tend
-        to employ sensory avoidance to sensory data that most people can easily tune out. This includes sensory input such as:
+          <div class="sensory-card-front">    
+      <p style={{color: 'blue'}}>Sensory input affecting people with Hypersensitivity
       </p>
       </div>
       <div class="sensory-card-back">
@@ -84,6 +100,44 @@ function Sensory() {
       </div>
       </div>
       </div>
+      </details>
+      <details class="sensory-details" style={{border: '1px solid #ccc'}}>
+        <summary class="sensory-summary">Lesson 3 - Helping those with Hypersensitivity</summary>
+        When the sensory input becomes too much for someone suffering from Hypersensitivity and they begin to get overwhelmed, there are
+        a number of ways in which you can help them. These ways help them to reduce the sensory input overwhelming them so they can return
+        to a state of calm.
+
+        <div class="sensory-card-wrapper">
+        <div class="sensory-card-body">
+          <div class="sensory-card-front">
+      <p style={{color: 'blue'}}>When attempting to help someone experiencing a sensory issue related to hypersensitivity, there are a number of accommodations
+        that can be made, such as:
+      </p>
+      </div>
+
+      <div class="sensory-card-back">
+      <ul class="sensoryBP">
+        <li>Sunglasses or other eye covers to shut out excessive light</li>
+        <li>Ear plugs/defenders or headphones when in loud environments</li>
+        <li>Avoiding products with potent smells or strong tastes, such as spices</li>
+        <li>Soft, comfortable clothing</li>
+        <li>Designing schedules which avoid large crowds whenever possible</li>
+      </ul>
+      </div>
+      </div>
+      </div>
+      </details>
+
+      
+      <details class="sensory-details" style={{border: '1px solid #ccc'}}>
+        <summary class="sensory-summary">Lesson 4 - Challenges faced by those with Hyposensitivity</summary>
+      </details>
+      <details class="sensory-details" style={{border: '1px solid #ccc'}}>
+        <summary class="sensory-summary">Lesson 5 - Helping those with Hypersensitivity</summary>
+      </details>
+      <details class="sensory-details" style={{border: '1px solid #ccc'}}>
+        <summary class="sensory-summary">Lesson 6 - Sensory Overload and Stimming</summary>
+      </details>
 
       <br></br>
 
@@ -108,30 +162,10 @@ function Sensory() {
       </p>
 
       <br></br>
-      <div class="sensory-card-wrapper">
-        <div class="sensory-card-body">
-          <div class="sensory-card-front">
-      <p style={{color: 'blue'}}>When attempting to help someone experiencing a sensory issue related to hypersensitivity, there are a number of accommodations
-        that can be made, such as:
-      </p>
-      </div>
-
-      <div class="sensory-card-back">
-      <ul class="sensoryBP">
-        <li>Sunglasses or other eye covers to shut out excessive light</li>
-        <li>Ear plugs/defenders or headphones when in loud environments</li>
-        <li>Avoiding products with potent smells or strong tastes, such as spices</li>
-        <li>Soft, comfortable clothing</li>
-        <li>Designing schedules which avoid large crowds whenever possible</li>
-      </ul>
-      </div>
-      </div>
-      </div>
 
       <br></br>
       <br></br>
 
-      <h3><u>Hyposensitivity</u></h3>
 
       <p>Hyposensitivity is when a person with sensory difficulties suffers from a lack of sensory input and displays an attraction to 
         sensory input, as opposed to having an excess of it. This can display itself as having an attraction to things such as bright 
