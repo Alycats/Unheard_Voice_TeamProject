@@ -1,5 +1,5 @@
 import React from "react";
-import logo from '../images/UNHV'
+import logo from '../images/UNHV.png'
 
 function Header() {
   return (
