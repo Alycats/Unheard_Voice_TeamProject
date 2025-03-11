@@ -2,7 +2,7 @@ import React from 'react';
 import Quiz from '../components/Quiz';
 import VideoClip from '../components/Youtube-Video';
 import Lesson from '../components/Lesson-Row';
-
+import MovingDot from '../components/RedDot'; // Import the MovingDot component
 
 
 // Default Sports Quiz Questions
@@ -75,8 +75,10 @@ function Sports() {
       <p>Reward down below</p>
       <p>Down below is a following red dot. It follows the cursor around</p>
       <p></p>
+      <MovingDot />
     </div>
   );
 }
+
 
 export default Sports;
