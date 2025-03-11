@@ -19,12 +19,8 @@ body {
   box-sizing: border-box;
   box-shadow: 0px 5px 15px rgba(0, 0, 0, 0.3); /* Soft shadow */
   border-bottom: 3px solid #FBC02D; /* Yellow bottom border */
-  transition: transform 0.3s ease-in-out;
 }
 
-.main-navbar:hover {
-  transform: translateY(-5px); /* Slight hover effect */
-}
 
 /* HEADER WRAPPER (LOGO & TITLE) */
 .header-wrapper {
