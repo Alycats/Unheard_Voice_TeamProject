@@ -285,7 +285,7 @@ function Sports() {
 
       {/* Main Quiz */}
       <h2 style={{ marginTop: "40px" }}>Final Quiz: Sports and Autism</h2>
-      <Quiz questions={technologyQuestions} />
+      <Quiz questions={sportsQuestions} />
       <MovingDot/>
     </div>
   );
