@@ -2,6 +2,7 @@ import React from 'react';
 import Quiz from '../components/Quiz';
 import '../styles/Sensory.css';
 import Card from '../components/Card';  // Import the Card component
+import Lesson from '../components/Lesson-Row';
 
 
 const sensoryQuestions = [
@@ -57,11 +58,33 @@ const sensoryQuestions = [
   },
 ];
 
+const lessons = [
+  {
+    title: "Lesson 1 - Sensory Difficulties and Autism",
+    content: "XXXX"
+    
+  },
+  {
+    title: "Lesson 2 - Hypersensitivity",
+    content: "XXXX"
+  },
+  {
+    title: "Lesson 3 - Hyposensitivity",
+    content: "XXXX"
+  },
+  {
+    title: "Lesson 4 - Sensory Overload and Stimming",
+    content: "XXXX"
+  }
+];
+
 function Sensory() {
   return (
     <div className="body">
-      <h1 style={{ backgroundColor: 'red' }}>Sensory Challenges and Autism</h1>
+      <h1>Sensory Challenges and Autism</h1>
       <p>Learn about the sensory processing challenges that many individuals with autism face and how to address them.</p>
+
+      <Lesson lessons={lessons} />
 
       <p>Sensory Difficulties in people with autism fall into two categories: Hypersensitivity and Hyposensitivity</p>
 
