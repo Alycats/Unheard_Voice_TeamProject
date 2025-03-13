@@ -242,7 +242,7 @@ function Sports() {
       <h1>Sports and Autism</h1>
       <VideoClip />
       <p>Explore how sports can help children with autism develop social skills, improve motor coordination, and more.</p>
-
+      <p>Those that achived 60% or more in the final quiz here is a reward at the bottom of the page </p>
       {/* Loop through lessons */}
       {lessons.map((lesson, index) => (
         <div key={index} className="lesson">
