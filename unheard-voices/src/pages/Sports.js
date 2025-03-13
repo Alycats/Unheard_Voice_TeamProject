@@ -1,14 +1,20 @@
-import React from 'react';
-import Quiz from '../components/Quiz';
-import VideoClip from '../components/Youtube-Video';
+import React, { useState } from 'react';
 import Lesson from '../components/Lesson-Row';
+import Card from '../components/Card';
+import QuizSmall from '../components/QuizSmall';
+import Quiz from '../components/Quiz';
+import '../styles/Sport.css';
+import VideoClip from '../components/Youtube-Video';
+import MovingDot from '../components/RedDot';
 
-// Default Sports Quiz Questions
+
+
+// Questions for the final quiz
 const sportsQuestions = [
   {
     question: "What should you do before a training session?",
-    options: ["Meet the child before the first lesson showing the sports equiptment that will be used", "Play with the equiptment till everyone arrives", "Set everything up and wait", "Stretch"],
-    correctAnswer: "Meet the child before the first lesson showing the sports equiptment that will be used",
+    options: ["Meet the child before the first lesson showing the sports equipment that will be used", "Play with the equipment till everyone arrives", "Set everything up and wait", "Stretch"],
+    correctAnswer: "Meet the child before the first lesson showing the sports equipment that will be used",
   },
   {
     question: "What will happen if you tell the child all the information of the lesson all at once?",
@@ -57,45 +63,230 @@ const sportsQuestions = [
   },
 ];
 
-// Default Sports Lesson Content
-const sportsLessons = [
+
+const evaluationMessage = (score) => {
+  if (score === 0) return "Better luck next time!";
+  if (score === sportsQuestions.length) return "Excellent!";
+  return "Good job!";
+};
+
+// Lessons Data with two Cards per lesson
+const lessons = [
   {
     title: "Lesson 1",
-    content: "Before you start to coach a child that has autism, not every child is the same, and what may work for one child doesn't mean it will work for the other child. Giving a child a series of steps to take in all at once will be difficult for them and quite overwhelming."
+    sections: [
+      {
+        title: "What is Autism?",
+        content: "Autism is a developmental disorder that affects communication, behavior, and social interaction."
+      },
+      {
+        title: "Sports and Autism",
+        content: "Explore how sports can help children with autism develop social skills, improve motor coordination, and more."
+      }
+    ],
+    cards: [
+      {
+        title: "Sports & Autism: Building Skills Through Play",
+        content: "Sports can enhance social and motor skills for kids with autism.",
+        listItems: ["Structured Routines", "Visual Schedules", "Adaptive Equipment"],
+        isFlippable: true
+      },
+      {
+        title: "Teaching Sports to Kids with Autism",
+        content: "Modified approaches can make sports enjoyable and accessible.",
+        listItems:  ["Sensory-Friendly Gear", "Clear Instructions", "Repetitive Drills"],
+        isFlippable: true
+      }
+    ],
+    quizSmall: [
+      {
+        question: "Which tool helps kids with autism follow sports routines?",  
+        options: ["Whistle", "Visual schedule", "Stopwatch", "Jersey"],
+        correctAnswer: "Visual schedule",
+      },
+      {
+        question: "What equipment can help reduce sensory overload in sports?",
+        options:  ["Soft balls", "Loudspeakers", "Bright lights", "Metal whistles"],
+        correctAnswer: "Soft balls",
+      }
+    ]
   },
   {
     title: "Lesson 2",
-    content: "To teach a child with autism sports to make things easier for the child to settle in, meet the child before the first lesson and show them the sports equipment that will be used ahead of time. This way, the child isn’t overwhelmed with all the information at once."
+    sections: [
+      {
+        title: "Teaching sports with children with Autism",
+        content: "Before you start to coach a child that has autism, not every child is the same and what may work for one child doesn't mean it will work for the other child."
+      },
+      {
+        title: "Teaching sports with children with Autism PT2",
+        content: "Giving a child a series of steps to take in all at once will be difficult for them and quite overwhelming."
+      }
+    ],
+    cards: [
+      {
+        title: "Sports Benefits for Kids with Autism",
+        content: "Physical activity supports focus, coordination, and social skills.",
+        listItems: ["Improved Motor Skills", "Teamwork Development", "Sensory Regulation"],
+        isFlippable: true
+      },
+      {
+        title: "Coaching Strategies for Autism in Sports",
+        content: "Using visual aids and structured guidance boosts learning.",
+        listItems: ["Picture-Based Instructions", "Step-by-Step Demonstrations", "Predictability"],
+        isFlippable: true
+      }
+    ],
+    quizSmall: [
+      {
+        question: "Which strategy helps children with autism stay engaged in sports?",
+        options: ["Random drills", "Consistent routines", "Sudden rule changes", "Unstructured play"],
+        correctAnswer: "Consistent routines",
+      },
+      {
+        question: "Which sport is often recommended for children with autism?",
+        options:  ["Swimming", "Hockey", "Wrestling", "Football"],
+        correctAnswer: "Swimming",
+      }
+    ]
   },
   {
     title: "Lesson 3",
-    content: "For each practice, make sure to have a repeated routine every time so that the child gets used to the order. Avoid sarcasm, metaphors, and humor as they may confuse children with autism."
+    sections: [
+      {
+        title: "Teaching the child PT1",
+        content: "To teach a child with autism sports to make things easier for the child to settle in meeting the child before the first lesson and showing the child the sports equipment that's about to be used ahead of time will also help. "
+      },
+      {
+        title: "Teaching the child PT2",
+        content: "That way the child isn't hit with all the information all at once and shown the equipment which they could be unfamiliar with and told to repeat the action.  "
+      }
+    ],
+    cards: [
+      {
+        title: "Making Sports Fun for Kids with Autism",
+        content: "Customizing activities helps children stay engaged.",
+        listItems: ["Sensory Breaks", "Preferred Activities", "Positive Reinforcement"],
+        isFlippable: true
+      },
+      {
+        title: "Sports & Sensory Processing in Autism",
+        content: "Adjusting sports environments reduces sensory overload.",
+        listItems:  ["Quiet Practice Spaces", "Noise-Canceling Headphones", "Soft Equipment"],
+        isFlippable: true
+      }
+    ],
+    quizSmall: [
+      {
+        question: "What can coaches use to give clear instructions to autistic children?",
+        options: ["Hand signals", "Visual aids", "Shouting", "Complex strategies"],
+        correctAnswer: "Visual aids",
+      },
+      {
+        question: "Which item can help an autistic child cope with noisy sports environments?",
+        options:  ["Earplugs", "Heavy shoes", "Baseball cap", "Flashlight"],
+        correctAnswer: "Earplugs",
+      }
+    ]
   },
   {
     title: "Lesson 4",
-    content: "Some sports don't require a high level of communication or even team play, so certain sports like swimming, track and field, bowling, and others will be more effective and enjoyable for children with autism."
-  },
+    sections: [
+      {
+        title: "Final Lessons",
+        content: "Linking back to the not all children with autism are the same some may like the social aspect of team sports but other may dislike it and find it difficult make sure as a coach or a teacher you don't force it open them. And lastly stay positive, be patient the child will hopefully improve and through your positivity it can potentially motivate the child into becoming more into the sport. Remember to make it fun for the child as they will need to be motivated to take part or find interest in it. "
+      },
+      {
+        title: "Picking a sport to teach",
+        content: "Some sports don't require a high level of communication or even team play so certain sports will be more effective and similar to teach to children with autism which will also allow them to have fun. These sports are swimming, track and field, bowling, Horseback Riding, Hiking and Fishing, Biking and lastly martial arts."
+      }
+    ],
+    cards: [
+      {
+        title: "Parental Support in Autism & Sports",
+        content: "Parents play a crucial role in sports engagement for autistic children.",
+        listItems: ["Practice at Home", "Advocating for Accommodations", "Celebrating Small Wins"],
+        isFlippable: true
+      },
+      {
+        title: "The Impact of Sports on Autism Development",
+        content: "Sports enhance physical, emotional, and cognitive growth.",
+        listItems:  ["Better Coordination", "Emotional Regulation", "Increased Confidence"],
+        isFlippable: true
+      }
+    ],
+    quizSmall: [
+      {
+        question: "Which factor is important for kids with autism in sports?",
+        options: ["Predictability", "Crowded stadiums", "Loud whistles", "Complex rules"],
+        correctAnswer: "Predictability",
+      },
+      {
+        question: "Which sport provides repetitive movements that help autistic kids?",
+        options: ["Basketball", "Martial arts", "Hockey", "Rugby"],
+        correctAnswer: "Martial arts",
+      }
+    ]
+  }
 ];
 
 function Sports() {
+  const [openLesson, setOpenLesson] = useState(null);
+
+  const toggleLesson = (index) => {
+    setOpenLesson(openLesson === index ? null : index);
+  };
+
   return (
     <div>
       <h1>Sports and Autism</h1>
-      <p>Explore how sports can help children with autism develop social skills, improve motor coordination, and more.</p>
-      <h2>Teaching sports with children with Autism</h2>
-      
-      {/* Pass the sportsLessons data as a prop to the Lesson component */}
-      <Lesson lessons={sportsLessons} />
-      
       <VideoClip />
-      
-      {/* Quiz component with the sportsQuestions */}
-      <p>Need 40% to use Reward below Quiz</p>
+      <p>Explore how sports can help children with autism develop social skills, improve motor coordination, and more.</p>
+      <p>Those that achived 60% or more in the final quiz here is a reward at the bottom of the page </p>
+      {/* Loop through lessons */}
+      {lessons.map((lesson, index) => (
+        <div key={index} className="lesson">
+          {/* Lesson Toggle Button */}
+          <button
+            onClick={() => toggleLesson(index)}
+            className="lesson-button"
+          >
+            {lesson.title} {openLesson === index ? "▲" : "▼"}
+          </button>
+
+          {/* Lesson Content */}
+          {openLesson === index && (
+            <div className="lesson-content">
+              {/* Sections */}
+              <Lesson lessons={lesson.sections || []} />
+
+              {/* Cards - Two cards displayed side by side */}
+              <div className="cards-container">
+                {lesson.cards && lesson.cards.map((card, i) => (
+                  <Card
+                    key={i}
+                    title={card.title}
+                    content={card.content}
+                    listItems={card.listItems}
+                    isFlippable={card.isFlippable}
+                  />
+                ))}
+              </div>
+
+              {/* Small Quiz */}
+              <QuizSmall
+                questions={lesson.quizSmall}
+                evaluationMessage={evaluationMessage}
+              />
+            </div>
+          )}
+        </div>
+      ))}
+
+      {/* Main Quiz */}
+      <h2 style={{ marginTop: "40px" }}>Final Quiz: Sports and Autism</h2>
       <Quiz questions={sportsQuestions} />
-      
-      <p>Reward down below</p>
-      <p>Down below is a following red dot. It follows the cursor around</p>
-      <p></p>
+      <MovingDot/>
     </div>
   );
 }
