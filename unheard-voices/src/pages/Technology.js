@@ -8,31 +8,58 @@ import '../styles/Technology.css';
 // Questions for the final quiz
 const technologyQuestions = [
   {
-    question: "What is the primary goal of assistive technology in autism therapy?",
-    options: ["Entertainment", "Improved communication", "Social media use", "Video gaming"],
-    correctAnswer: "Improved communication",
+    question: "What is the primary benefit of video games for autistic individuals?",
+    options: ["Improves cognitive and social skills", "Replaces traditional therapy", "Encourages isolation", "Has no educational value"],
+    correctAnswer: "Improves cognitive and social skills",
   },
   {
-    question: "Which of these technologies is often used for speech therapy?",
-    options: ["Virtual reality", "AAC devices", "Fitness trackers", "Smart TVs"],
-    correctAnswer: "AAC devices",
+    question: "How can parents ensure healthy gaming habits for autistic children?",
+    options: ["Allow unlimited screen time", "Encourage breaks and set time limits", "Discourage gaming completely", "Only allow non-digital activities"],
+    correctAnswer: "Encourage breaks and set time limits",
   },
   {
-    question: "How does virtual reality help individuals with autism?",
-    options: ["Enhances learning in a controlled environment", "Increases stress", "Replaces social interactions", "None of the above"],
-    correctAnswer: "Enhances learning in a controlled environment",
+    question: "Which type of technology is commonly used to assist with communication for non-verbal autistic individuals?",
+    options: ["Smart TVs", "AAC Devices", "Gaming Consoles", "Fitness Trackers"],
+    correctAnswer: "AAC Devices",
   },
   {
-    question: "Which of the following can help children with autism develop daily life skills?",
-    options: ["Task management apps", "Gaming consoles", "Books", "Board games"],
-    correctAnswer: "Task management apps",
+    question: "How does gamification help children with autism?",
+    options: ["Improves engagement and learning", "Increases stress levels", "Eliminates the need for social interaction", "None of the above"],
+    correctAnswer: "Improves engagement and learning",
   },
   {
-    question: "What is the role of AI in autism support?",
-    options: ["Predicting behaviors", "Replacing therapists", "Reducing social interactions", "None of the above"],
-    correctAnswer: "Predicting behaviors",
+    question: "What is the purpose of educational apps for autistic individuals?",
+    options: ["To provide structured and interactive learning", "To replace classroom education", "To limit social interaction", "To increase screen time"],
+    correctAnswer: "To provide structured and interactive learning",
   },
+  {
+    question: "What role does AI play in autism support?",
+    options: ["Predicting behaviors and providing personalized learning", "Replacing therapists", "Encouraging social withdrawal", "None of the above"],
+    correctAnswer: "Predicting behaviors and providing personalized learning",
+  },
+  {
+    question: "How does virtual reality support autism therapy?",
+    options: ["Creates a controlled learning environment", "Replaces human interaction", "Increases sensory overload", "None of the above"],
+    correctAnswer: "Creates a controlled learning environment",
+  },
+  {
+    question: "Which tool can help autistic children develop daily routines?",
+    options: ["Task Management Apps", "Gaming Consoles", "Books", "Board Games"],
+    correctAnswer: "Task Management Apps",
+  },
+  {
+    question: "Which device can help manage sensory overload?",
+    options: ["Noise-canceling headphones", "Tablets", "Virtual reality headsets", "Gaming consoles"],
+    correctAnswer: "Noise-canceling headphones",
+  },
+  {
+    question: "What is one way social skill development apps help autistic individuals?",
+    options: ["Teach social cues in a structured way", "Eliminate the need for face-to-face interaction", "Encourage isolation", "None of the above"],
+    correctAnswer: "Teach social cues in a structured way",
+  }
 ];
+
+
 
 const evaluationMessage = (score) => {
   if (score === 0) return "Better luck next time!";
@@ -46,12 +73,12 @@ const lessons = [
     title: "Lesson 1: Introduction to Technology and Autism",
     sections: [
       {
-        title: "What is Autism?",
-        content: "Autism is a developmental disorder that affects communication, behavior, and social interaction."
+        title: "What is Autism Spectrum Disorder?",
+        content: "Autidm spectrum disorder is a neurological and developmental disorder that affects how people interact with others, communincate, learn, and behave. Autism is often diagnosed when a person is younger which is why it can be described as a developmental disorder."
       },
       {
         title: "Technology's Role",
-        content: "Technology plays an important role in aiding communication and learning for individuals with autism."
+        content: "Numerous studies have shown that individuals with autism are often drawn to technology, and many of them possess the ability to use computers and learn effectively through their use. Some research suggests that this is because computers offer a sense of predictability and structure which helps people with autism to feel more secure in that they can know what to expect. They may also engage in repetitive behaviors when using technology which is a characteristic of autism spectrum disorder."
       }
     ],
     cards: [
@@ -121,44 +148,54 @@ const lessons = [
     ]
   },
   {
-    title: "Lesson 3: Learning Tools",
-    sections: [
-      {
-        title: "Educational Apps",
-        content: "Many apps are designed to support learning and engagement for children with autism."
-      },
-      {
-        title: "Gamification in Learning",
-        content: "Games can help children with autism develop cognitive and motor skills."
-      }
-    ],
-    cards: [
-      {
-        title: "Interactive Learning",
-        content: "Technology-based learning can be engaging and effective.",
-        listItems: ["Interactive Games", "Personalized Learning Plans", "AI Tutors"],
-        isFlippable: true
-      },
-      {
-        title: "Personalized Learning",
-        content: "Technology enables tailored learning experiences for children with autism.",
-        listItems: ["Learning Apps", "Gamification", "Adaptive Learning Programs"],
-        isFlippable: false
-      }
-    ],
-    quizSmall: [
-      {
-        question: "Which of these is an example of an educational tool?",
-        options: ["Gaming consoles", "Augmented reality apps", "Smart TVs", "Music players"],
-        correctAnswer: "Augmented reality apps",
-      },
-      {
-        question: "How do games help children with autism?",
-        options: ["Improve focus", "Reduce engagement", "Replace human interaction", "None of the above"],
-        correctAnswer: "Improve focus",
-      }
-    ]
-  },
+      title: "Lesson 3: Gaming and Learning for Autism",
+      sections: [
+        {
+          title: "Educational Games",
+          content: "Video games and educational apps have become powerful tools in supporting the development of children with autism. Many games are designed to enhance cognitive functions, such as memory, attention, and problem-solving. Interactive learning experiences allow children to engage with content in a structured, predictable manner, making it easier for them to retain information. Games that incorporate social elements can also help autistic individuals practice communication skills in a low-pressure environment."
+        },
+        {
+          title: "Healthy Gaming Habits",
+          content: "While gaming offers many cognitive and social benefits, it is important to encourage a balanced approach to screen time. Excessive gaming can lead to disrupted sleep, increased anxiety, and difficulties with social interactions in the real world. Parents and caregivers should guide children in setting time limits, taking regular breaks, and choosing age-appropriate and educational games. Moderation and structured playtime ensure that gaming remains a positive and beneficial tool rather than a distraction from other important activities like physical exercise and face-to-face communication."
+        }
+      ],
+      cards: [
+        {
+          title: "Benefits of Gaming",
+          content: "Gaming provides a structured and engaging way to build essential life skills. Many games designed for autistic individuals focus on strengthening cognitive, motor, and social skills in a way that feels natural and enjoyable. For example, puzzle games improve logical thinking, while role-playing games (RPGs) can teach problem-solving and strategic planning. Multiplayer games can also help autistic individuals develop teamwork and social communication skills in a controlled environment.",
+          listItems: ["Problem-Solving", "Creativity Boost", "Social Interaction", "Cognitive Skill Development"],
+          isFlippable: true
+        },
+        {
+          title: "Healthy Gaming Tips",
+          content: "To maximize the benefits of gaming while avoiding potential drawbacks, it is important to establish healthy gaming habits. Encouraging structured playtime and setting clear boundaries can help autistic individuals enjoy gaming without it interfering with other aspects of their daily routine. Parents and caregivers should also be mindful of the types of games children play, ensuring they promote positive learning experiences.",
+          listItems: ["Set Time Limits", "Encourage Breaks", "Monitor Content", "Choose Educational Games"],
+          isFlippable: false
+        }
+      ],
+      quizSmall: [
+        {
+          question: "How can gaming benefit autistic individuals?",
+          options: ["Improve problem-solving", "Increase stress", "Reduce learning ability", "None of the above"],
+          correctAnswer: "Improve problem-solving",
+        },
+        {
+          question: "Why is it important to set gaming time limits?",
+          options: ["To ensure a balanced routine", "To stop children from having fun", "Because games have no benefits", "To eliminate screen time completely"],
+          correctAnswer: "To ensure a balanced routine",
+        },
+        {
+          question: "What type of games can help autistic individuals develop social skills?",
+          options: ["Single-player puzzle games", "Role-playing and multiplayer games", "First-person shooter games", "None of the above"],
+          correctAnswer: "Role-playing and multiplayer games",
+        },
+        {
+          question: "Which of the following is a healthy gaming habit?",
+          options: ["Skipping meals to play longer", "Playing for 10 hours straight", "Taking regular breaks", "Avoiding all video games"],
+          correctAnswer: "Taking regular breaks",
+        }
+      ]
+    },
   {
     title: "Lesson 4: Sensory and Social Skills Technology",
     sections: [

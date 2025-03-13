@@ -1,6 +1,6 @@
 import React from 'react';
+import { Link } from 'react-router-dom'; // ✅ Import Link from React Router
 import '../styles/Home.css';
-import holder from '../images/infinity-logo.jpg'
 
 function Home() {
   return (
@@ -10,10 +10,6 @@ function Home() {
         Explore various topics about autism, from sensory challenges to the role of technology.
       </p>
       <div className="home-content">
-        <img 
-          /*src={holder} alt="holder"*/
-          className="home-image"
-        />
         <p className="home-text">
           Our goal is to provide resources, support, and a deeper understanding of autism.
           Click on the topics below to learn more!
@@ -21,10 +17,10 @@ function Home() {
       </div>
 
       <ul className="nav-links">
-        <li><a href="/sports" className="nav-button sports">🏀 Sports</a></li>
-        <li><a href="/technology" className="nav-button technology">💻 Technology</a></li>
-        <li><a href="/sensory" className="nav-button sensory">🧩 Sensory</a></li>
-        <li><a href="/language" className="nav-button language">🗣️ Language</a></li>
+        <li><Link to="/sports" className="nav-button sports">🏀 Sports</Link></li>
+        <li><Link to="/technology" className="nav-button technology">💻 Technology</Link></li>
+        <li><Link to="/sensory" className="nav-button sensory">🧩 Sensory</Link></li>
+        <li><Link to="/language" className="nav-button language">🗣️ Language</Link></li>
       </ul>
     </div>
   );
