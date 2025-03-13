@@ -1,106 +1,311 @@
-// LanguagePage.js
-import React from 'react';
-import QuizSmall from '../components/QuizSmall';
+import React, { useState } from 'react';
 import Lesson from '../components/Lesson-Row';
+import Card from '../components/Card';
+import QuizSmall from '../components/QuizSmall';
 import Quiz from '../components/Quiz';
-import AnimalFlashcardGame from '../components/AnimalFlashcardGame'
 
-// Dropdown Content for Milestone Explanation
+
+// Questions for the final quiz
+const languageQuestions = [
+  {
+    question: "What is the primary goal of language development tools in autism therapy?",
+    options: ["Entertainment", "Improved communication", "Social media use", "Video gaming"],
+    correctAnswer: "Improved communication",
+  },
+  {
+    question: "Which of these tools is often used for language development in non-verbal children?",
+    options: ["Virtual reality", "AAC devices", "Fitness trackers", "Smart TVs"],
+    correctAnswer: "AAC devices",
+  },
+  {
+    question: "How do language development apps help children with autism?",
+    options: ["Enhance vocabulary and sentence structure", "Increase stress", "Replace social interactions", "None of the above"],
+    correctAnswer: "Enhance vocabulary and sentence structure",
+  },
+  {
+    question: "Which of the following is a key feature of language development tools?",
+    options: ["Task management", "Visual supports", "Gaming", "None of the above"],
+    correctAnswer: "Visual supports",
+  },
+  {
+    question: "What role does repetition play in language development for autism?",
+    options: ["It reinforces learning", "It reduces engagement", "It replaces human interaction", "None of the above"],
+    correctAnswer: "It reinforces learning",
+  },
+  // New questions added below
+  {
+    question: "What is the purpose of using visual supports in language development?",
+    options: ["To replace verbal communication", "To provide visual cues and structure", "To increase screen time", "None of the above"],
+    correctAnswer: "To provide visual cues and structure",
+  },
+  {
+    question: "Which of the following is an example of a low-tech AAC device?",
+    options: ["Tablet with a communication app", "Picture exchange system", "Speech-generating device", "None of the above"],
+    correctAnswer: "Picture exchange system",
+  },
+  {
+    question: "How can social stories help children with autism?",
+    options: ["By teaching social skills through narratives", "By replacing human interaction", "By increasing screen time", "None of the above"],
+    correctAnswer: "By teaching social skills through narratives",
+  },
+  {
+    question: "What is a common feature of language development apps for autism?",
+    options: ["High-speed gaming", "Interactive and repetitive activities", "Complex mathematical problems", "None of the above"],
+    correctAnswer: "Interactive and repetitive activities",
+  },
+  {
+    question: "Why is early intervention important for language development in autism?",
+    options: ["It delays progress", "It maximizes the child's learning potential", "It replaces the need for therapy", "None of the above"],
+    correctAnswer: "It maximizes the child's learning potential",
+  }
+];
+
+
+const evaluationMessage = (score) => {
+  if (score === 0) return "Better luck next time!";
+  if (score === languageQuestions.length) return "Excellent!";
+  return "Good job!";
+};
+
+// Lessons Data with two Cards per lesson
 const lessons = [
   {
-    title: "What is Language Development?",
-    content: "Language development refers to the process by which children learn to understand and use language. For children with autism, this process may occur differently or at a different pace. Early intervention and support can help improve communication skills."
+    title: "Lesson 1: Introduction to Language Development in Autism",
+    sections: [
+      {
+        title: "What is Autism?",
+        content: "Autism is a developmental disorder that affects communication, behavior, and social interaction."
+      },
+      {
+        title: "Language Development Challenges",
+        content: "Children with autism often face challenges in developing language and communication skills."
+      }
+    ],
+    cards: [
+      {
+        title: "Language Development Tools",
+        content: "Innovative tools have been developed to support language acquisition in children with autism.",
+        listItems: ["Communication Apps", "AAC Devices", "Visual Supports"],
+        isFlippable: true
+      },
+      {
+        title: "Communication Strategies",
+        content: "Strategies like visual aids and repetition are used to enhance language skills.",
+        listItems: ["Visual Schedules", "Social Stories", "Repetition Techniques"],
+        isFlippable: false
+      }
+    ],
+    quizSmall: [
+      {
+        question: "Which tool is commonly used for language development in autism?",
+        options: ["Smart TVs", "AAC Devices", "Gaming Consoles", "Tablets"],
+        correctAnswer: "AAC Devices",
+      },
+      {
+        question: "What is a key strategy for language development?",
+        options: ["Visual Supports", "Gaming", "Music", "None of the above"],
+        correctAnswer: "Visual Supports",
+      }
+    ],
     
   },
   {
-    title: "Common Language Challenges in Autism",
-    content: "Autistic children may experience challenges such as delayed speech, difficulty understanding social cues, repetitive language, or trouble with conversational skills. Speech therapy and tailored educational programs can help address these challenges."
+    title: "Lesson 2: Augmentative and Alternative Communication (AAC)",
+    sections: [
+      {
+        title: "What is AAC?",
+        content: "AAC refers to tools and strategies that help non-verbal individuals communicate effectively."
+      },
+      {
+        title: "Types of AAC Devices",
+        content: "AAC devices range from simple picture boards to advanced speech-generating devices."
+      }
+    ],
+    cards: [
+      {
+        title: "Popular AAC Tools",
+        content: "AAC tools are designed to support communication in various ways.",
+        listItems: ["Picture Exchange Systems", "Speech-Generating Devices", "Tablet-Based Apps"],
+        isFlippable: true
+      },
+      {
+        title: "Benefits of AAC",
+        content: "AAC devices help individuals express themselves and engage with others.",
+        listItems: ["Improved Communication", "Increased Independence", "Enhanced Social Interaction"],
+        isFlippable: false
+      }
+    ],
+    quizSmall: [
+      {
+        question: "What does AAC stand for?",
+        options: ["Alternative Autism Care", "Augmentative and Alternative Communication", "Advanced Audio Communication", "None of the above"],
+        correctAnswer: "Augmentative and Alternative Communication",
+      },
+      {
+        question: "Which of these is an example of an AAC device?",
+        options: ["Tablet-Based Apps", "Smartphones", "Video Games", "None of the above"],
+        correctAnswer: "Tablet-Based Apps",
+      }
+    ]
   },
   {
-    title: "How to Support Language Development",
-    content: "To support language development, engage your child in interactive activities, use visual aids, encourage imitation, and provide a language-rich environment. Working with speech therapists and educators can also be beneficial."
+    title: "Lesson 3: Language Development Apps",
+    sections: [
+      {
+        title: "Role of Apps in Language Development",
+        content: "Language development apps provide interactive and engaging ways to build communication skills."
+      },
+      {
+        title: "Features of Effective Apps",
+        content: "Effective apps use visual supports, repetition, and interactive activities to enhance learning."
+      }
+    ],
+    cards: [
+      {
+        title: "Top Language Development Apps",
+        content: "Apps designed to support language development in children with autism.",
+        listItems: ["Proloquo2Go", "Language Therapy for Kids", "Endless Alphabet"],
+        isFlippable: true
+      },
+      {
+        title: "How Apps Help",
+        content: "Apps provide structured and engaging ways to learn language skills.",
+        listItems: ["Interactive Activities", "Visual Supports", "Progress Tracking"],
+        isFlippable: false
+      }
+    ],
+    quizSmall: [
+      {
+        question: "Which app is designed for language development?",
+        options: ["Proloquo2Go", "Netflix", "Spotify", "None of the above"],
+        correctAnswer: "Proloquo2Go",
+      },
+      {
+        question: "What feature is common in language development apps?",
+        options: ["Visual Supports", "Gaming", "Music", "None of the above"],
+        correctAnswer: "Visual Supports",
+      }
+    ]
   },
   {
-    title: "Signs of Language Delays",
-    content: "Signs of language delays include limited vocabulary, difficulty forming sentences, lack of response to their name, and trouble following simple instructions. If you notice these signs, consult a pediatrician or speech therapist for evaluation."
+    title: "Lesson 4: Social Communication and Language",
+    sections: [
+      {
+        title: "Social Communication Challenges",
+        content: "Children with autism often struggle with understanding social cues and conversational skills."
+      },
+      {
+        title: "Tools for Social Communication",
+        content: "Tools like social stories and role-playing apps help children learn social communication skills."
+      }
+    ],
+    cards: [
+      {
+        title: "Social Communication Tools",
+        content: "Tools designed to help children with autism develop social communication skills.",
+        listItems: ["Social Stories", "Role-Playing Apps", "Visual Scripts"],
+        isFlippable: true
+      },
+      {
+        title: "Benefits of Social Communication Tools",
+        content: "These tools help children understand and engage in social interactions.",
+        listItems: ["Improved Social Skills", "Better Conversational Abilities", "Enhanced Understanding of Social Cues"],
+        isFlippable: false
+      }
+    ],
+    quizSmall: [
+      {
+        question: "What tool helps children understand social cues?",
+        options: ["Social Stories", "Gaming Consoles", "Books", "None of the above"],
+        correctAnswer: "Social Stories",
+      },
+      {
+        question: "Which of these is a benefit of social communication tools?",
+        options: ["Improved Social Skills", "Reduced Engagement", "Replaces Human Interaction", "None of the above"],
+        correctAnswer: "Improved Social Skills",
+      }
+    ]
   }
 ];
-const languageQuestions = [
-  {
-    question: "At what age should a child typically start saying simple words like mama or dada with meaning?",
-    options: ["6 months", "12 months", "18 months", "24 months"],
-    correctAnswer: "12 months",
-  },
-  {
-    question: "By age 2, how many words should a child's vocabulary typically include?",
-    options: ["10-20 words", "50+ words", "100+ words", "200+ words"],
-    correctAnswer: "50+ words",
-  },
-  {
-    question: "Which of the following is a key sign that a 3-year-old is developing language skills appropriately?",
-    options: ["Can put together 2-3 word sentences", "Only babbles and gestures instead of using words", "Rarely responds to their name when called", "Struggles to imitate sounds or words"],
-    correctAnswer: "Can put together 2-3 word sentences",
-  },
-  {
-    question: "By what age should a child be able to follow simple one-step instructions, such as give me the ball?",
-    options: ["14 months", "16 months", "18 months", "12 months"],
-    correctAnswer: "12 months",
-  },
-  {
-    question: "When should a child begin to use pronouns like I, you, and me?",
-    options: ["12-18 months", "18-24 months", "2-3 years", "3-4 years"],
-    correctAnswer: "2-3 years",
-  },
-];
 
-// Smaller Quiz Questions
-const smallerQuizQuestions = [
-  {
-    question: "At what age should a child typically say their first word?",
-    options: ["6 months", "12 months", "18 months"],
-    correctAnswer: "12 months",
-  },
-  {
-    question: "By age 2, a child should be able to use how many words?",
-    options: ["10-20 words", "30-50 words", "100+ words"],
-    correctAnswer: "30-50 words",
-  },
-  {
-    question: "At what age should a child combine two words together?",
-    options: ["18-24 months", "2-3 years", "3-4 years"],
-    correctAnswer: "18-24 months",
-  },
-];
+function Language() {
+  const [openLesson, setOpenLesson] = useState(null);
 
-// Evaluation message function for the smaller quiz
-const evaluationMessage = (score) => {
-  if (score === smallerQuizQuestions.length) {
-    return "Great job! You're on track with the language milestones.";
-  } else if (score >= smallerQuizQuestions.length / 2) {
-    return "Good effort! Some areas may need more attention.";
-  } else {
-    return "It seems there might be some language development delays. Consider consulting a pediatrician.";
-  }
-};
+  const toggleLesson = (index) => {
+    setOpenLesson(openLesson === index ? null : index);
+  };
 
-function LanguagePage() {
   return (
     <div>
-      <h1>Understanding Language Milestones</h1>
-      <p>A quick quiz to test your knowledge of early language milestones!</p>
+      <h1>Language Development in Autism</h1>
+       
+      <div className="video-responsive">
+        <iframe
+          width="560"
+          height="315"
+          src="https://www.youtube.com/embed/BtadnbcbrXk?si=ye5bdrcmNpAao-BO" // Replace VIDEO_ID with the actual video ID
+          title="YouTube video player"
+          frameBorder="0"
+          allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+          allowFullScreen
+        ></iframe>
+      </div>
+    
+      <p>Explore tools and strategies to support language and communication development in children with autism.</p>
 
-      {/* Dropdowns for detailed information */}
-      <Lesson lessons={lessons} />
+      {/* Loop through lessons */}
+      {lessons.map((lesson, index) => (
+        <div key={index} className="lesson">
+          {/* Lesson Toggle Button */}
+          <button 
+            onClick={() => toggleLesson(index)} 
+            className="lesson-button"
+          >
+            {lesson.title} {openLesson === index ? "▲" : "▼"}
+          </button>
 
-      {/* Render the smaller quiz here */}
-      <h2>Quick Quiz: Early Language Milestones</h2>
-      <QuizSmall questions={smallerQuizQuestions} evaluationMessage={evaluationMessage} />
-      <h2 style={{ marginTop: '40px' }}>Animal Flashcard Game</h2>
-      <p>Flip the cards to learn about animals and hear their sounds! 🐯🦁🐶🐱🐦</p>
-      <AnimalFlashcardGame />
+          {/* Lesson Content */}
+          {openLesson === index && (
+            <div className="lesson-content">
+              {/* Sections */}
+              <Lesson lessons={lesson.sections || []} />
+
+              {/* Cards - Two cards displayed side by side */}
+              <div className="cards-container">
+                {lesson.cards && lesson.cards.map((card, i) => (
+                  <Card 
+                    key={i} 
+                    title={card.title} 
+                    content={card.content} 
+                    listItems={card.listItems} 
+                    isFlippable={card.isFlippable}
+                  />
+                ))}
+              </div>
+
+              {/* Embedded YouTube Video */}
+              {lesson.videoEmbed && (
+                <div className="video-embed">
+                  <h3>Watch this video to learn more:</h3>
+                  {lesson.videoEmbed}
+                </div>
+              )}
+
+              {/* Small Quiz */}
+              <QuizSmall 
+                questions={lesson.quizSmall} 
+                evaluationMessage={evaluationMessage} 
+              />
+            </div>
+          )}
+        </div>
+      ))}
+
+      {/* Main Quiz */}
+      <h2 style={{ marginTop: "40px" }}>Final Quiz: Language Development in Autism</h2>
       <Quiz questions={languageQuestions} />
     </div>
   );
 }
 
-export default LanguagePage;
+export default Language;
