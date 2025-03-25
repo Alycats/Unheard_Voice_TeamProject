@@ -23,10 +23,10 @@ function Contact() {
           <p className="contact-phone">+1 234 567 891</p>
         </div>
         <div className="contact-card">
-          <h2 className="contact-name">Robert Johnson</h2>
-          <p className="contact-role">Support Specialist</p>
-          <p className="contact-email">robertjohnson@example.com</p>
-          <p className="contact-phone">+1 234 567 892</p>
+          <h2 className="contact-name">Joshua Ward</h2>
+          <p className="contact-role">Sensory Page</p>
+          <p className="contact-email">JW1462@student.aru.ac.uk</p>
+          <p className="contact-phone">+44 7700 136730</p>
         </div>
         <div className="contact-card">
           <h2 className="contact-name">Emily Davis</h2>
