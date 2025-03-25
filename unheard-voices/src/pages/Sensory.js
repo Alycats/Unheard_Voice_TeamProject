@@ -116,7 +116,7 @@ const lessons = [
       },
       {
         title: "How do people with Hypersensitivity cope?",
-        content: "Those sufferinf with Hypersensitivity tend to employ a technique called Sensory Avoidance. This means they take actions to reduce their sensory input so they can cope with excessive amounts"
+        content: "Those suffering with Hypersensitivity tend to employ a technique called Sensory Avoidance. This means they take actions to reduce their sensory input so they can cope with excessive amounts"
       }
     ],
     cards: [
