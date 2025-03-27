@@ -29,10 +29,10 @@ function Contact() {
           <p className="contact-phone">+44 7700 136730</p>
         </div>
         <div className="contact-card">
-          <h2 className="contact-name">Emily Davis</h2>
+          <h2 className="contact-name">Luther Cole</h2>
           <p className="contact-role">Content Creator</p>
-          <p className="contact-email">emilydavis@example.com</p>
-          <p className="contact-phone">+1 234 567 893</p>
+          <p className="contact-email">LC1288@student.aru.ac.uk</p>
+          <p className="contact-phone">+44 7896 047392</p>
         </div>
       </div>
     </div>
